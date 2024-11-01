@@ -11,7 +11,7 @@ namespace openipc.configurator.ViewModels
 #pragma warning disable CA1822 // Mark members as static
 
         #region FiveEightFrequency
-        private List<string> _fiveEightFrequencyList = new List<string>
+        private List<string?> _fiveEightFrequencyList = new List<string?>
         {
             "5180 MHz [36]",
             "5200 MHz [40]",
@@ -42,9 +42,9 @@ namespace openipc.configurator.ViewModels
             "5865 MHz [173]",
             "5885 MHz [177]"
         };
-        private string _fiveEightSelectedItem;
+        private string? _fiveEightSelectedItem;
 
-        public string FiveEightSelectedItem
+        public string? FiveEightSelectedItem
         {
             get { return _fiveEightSelectedItem; }
             set
@@ -55,22 +55,22 @@ namespace openipc.configurator.ViewModels
                 FiveEightChannelFormatted = "channel=" + (match.Success ? match.Groups[1].Value : FiveEightSelectedItem);
             }
         }
-        private string _fiveEightChannelFormatted;
+        private string? _fiveEightChannelFormatted;
 
-        public string FiveEightChannelFormatted
+        public string? FiveEightChannelFormatted
         {
             get => _fiveEightChannelFormatted;
             set => this.RaiseAndSetIfChanged(ref _fiveEightChannelFormatted, value);
         }
 
-        public List<string> FiveEightFrequencyList
+        public List<string?> FiveEightFrequencyList
         {
             get { return _fiveEightFrequencyList; }
             set { _fiveEightFrequencyList = this.RaiseAndSetIfChanged(ref _fiveEightFrequencyList, value); }
         }
         #endregion
         #region FiveEightTxPower
-        private List<string> _fiveEightTxPower = new List<string>
+        private List<string?> _fiveEightTxPower = new List<string?>
         {
             "1",
             "2",
@@ -104,9 +104,9 @@ namespace openipc.configurator.ViewModels
             "63"
         };
 
-        private string _fiveEightTxPowerSelectedItem;
+        private string? _fiveEightTxPowerSelectedItem;
 
-        public string FiveEightTxPowerSelectedItem
+        public string? FiveEightTxPowerSelectedItem
         {
             get { return _fiveEightTxPowerSelectedItem; }
             set
@@ -115,23 +115,23 @@ namespace openipc.configurator.ViewModels
                 FiveEightTxFormatted = "driver_txpower_override=" + value;
             }
         }
-        private string _fiveEightTxFormatted;
+        private string? _fiveEightTxFormatted;
 
-        public string FiveEightTxFormatted
+        public string? FiveEightTxFormatted
         {
             get { return _fiveEightTxFormatted; }
             set { _fiveEightTxFormatted = this.RaiseAndSetIfChanged(ref _fiveEightTxFormatted, value); }
         }
 
 
-        public List<string> FiveEightTxPowerList
+        public List<string?> FiveEightTxPowerList
         {
             get { return _fiveEightTxPower; }
             set { _fiveEightTxPower = this.RaiseAndSetIfChanged(ref _fiveEightTxPower, value); }
         }
         #endregion
         #region TwoFourFrequency
-        private List<string> _twoFourFrequency = new List<string>
+        private List<string?> _twoFourFrequency = new List<string?>
         {
             "2412 MHz [1]",
             "2417 MHz [2]",
@@ -148,9 +148,9 @@ namespace openipc.configurator.ViewModels
             "2472 MHz [13]",
             "2484 MHz [14]"
         };
-        private string _twoFourFrequencySelectedItem;
+        private string? _twoFourFrequencySelectedItem;
 
-        public string TwoFourFrequencySelectedItem
+        public string? TwoFourFrequencySelectedItem
         {
             get { return _twoFourFrequencySelectedItem; }
             set
@@ -160,22 +160,22 @@ namespace openipc.configurator.ViewModels
                 TwoFourFrequencyFormatted = "channel=" + (match.Success ? match.Groups[1].Value : "");
             }
         }
-        private string _twoFourFrequencyFormatted;
+        private string? _twoFourFrequencyFormatted;
 
-        public string TwoFourFrequencyFormatted
+        public string? TwoFourFrequencyFormatted
         {
             get { return _twoFourFrequencyFormatted; }
             set { _twoFourFrequencyFormatted = this.RaiseAndSetIfChanged(ref _twoFourFrequencyFormatted, value); }
         }
 
-        public List<string> TwoFourFrequencyList
+        public List<string?> TwoFourFrequencyList
         {
             get { return _twoFourFrequency; }
             set { _twoFourFrequency = this.RaiseAndSetIfChanged(ref _twoFourFrequency, value); }
         }
         #endregion
         #region TwoFourTxPower
-        private List<string> _twoFourTxPower = new List<string>
+        private List<string?> _twoFourTxPower = new List<string?>
         {
             "20",
             "25",
@@ -188,9 +188,9 @@ namespace openipc.configurator.ViewModels
             "58"
         };
 
-        private string _twoFourTxPowerSelectedItem;
+        private string? _twoFourTxPowerSelectedItem;
 
-        public string TwoFourTxPowerSelectedItem
+        public string? TwoFourTxPowerSelectedItem
         {
             get { return _twoFourTxPowerSelectedItem; }
             set
@@ -199,23 +199,23 @@ namespace openipc.configurator.ViewModels
                 TwoFourTxPowerFormatted = "txpower=" + value;
             }
         }
-        private string _twoFourTxPowerFormatted;
+        private string? _twoFourTxPowerFormatted;
 
-        public string TwoFourTxPowerFormatted
+        public string? TwoFourTxPowerFormatted
         {
             get { return _twoFourTxPowerFormatted; }
             set { _twoFourTxPowerFormatted = this.RaiseAndSetIfChanged(ref _twoFourTxPowerFormatted, value); }
         }
 
 
-        public List<string> TwoFourTxPowerList
+        public List<string?> TwoFourTxPowerList
         {
             get { return _twoFourTxPower; }
             set { _twoFourTxPower = this.RaiseAndSetIfChanged(ref _twoFourTxPower, value); }
         }
         #endregion
         #region MSCIndex
-        private List<string> _mscIndex = new List<string>
+        private List<string?> _mscIndex = new List<string?>
         {
             "0",
             "1",
@@ -250,9 +250,9 @@ namespace openipc.configurator.ViewModels
             "30",
             "31"
         };
-        private string _mscIndexSelectedItem;
+        private string? _mscIndexSelectedItem;
 
-        public string MscIndexSelectedItem
+        public string? MscIndexSelectedItem
         {
             get { return _mscIndexSelectedItem; }
             set
@@ -261,29 +261,29 @@ namespace openipc.configurator.ViewModels
                 MscIndexFormatted = "mcs_index=" + value;
             }
         }
-        private string _mscIndexFormatted;
+        private string? _mscIndexFormatted;
 
-        public string MscIndexFormatted
+        public string? MscIndexFormatted
         {
             get { return _mscIndexFormatted; }
             set { _mscIndexFormatted = this.RaiseAndSetIfChanged(ref _mscIndexFormatted, value); }
         }
 
-        public List<string> MscIndexList
+        public List<string?> MscIndexList
         {
             get { return _mscIndex; }
             set { _mscIndex = this.RaiseAndSetIfChanged(ref _mscIndex, value); }
         }
         #endregion
         #region STBC
-        private List<string> _stbc = new List<string>
+        private List<string?> _stbc = new List<string?>
         {
             "0",
             "1"
         };
-        private string _stbcSelectedItem;
+        private string? _stbcSelectedItem;
 
-        public string StbcSelectedItem
+        public string? StbcSelectedItem
         {
             get { return _stbcSelectedItem; }
             set
@@ -292,51 +292,51 @@ namespace openipc.configurator.ViewModels
                 StbcFormatted = "stbc=" + value;
             }
         }
-        private string _stbcFormatted;
+        private string? _stbcFormatted;
 
-        public string StbcFormatted
+        public string? StbcFormatted
         {
             get { return _stbcFormatted; }
             set { _stbcFormatted = this.RaiseAndSetIfChanged(ref _stbcFormatted, value); }
         }
 
-        public List<string> StbcList
+        public List<string?> StbcList
         {
             get { return _stbc; }
             set { _stbc = this.RaiseAndSetIfChanged(ref _stbc, value); }
         }
         #endregion
         #region LDPC
-        private List<string> _ldpc = new List<string>
+        private List<string?> _ldpc = new List<string?>
         {
             "0",
             "1"
         };
-        private string _ldpcSelectedItem;
+        private string? _ldpcSelectedItem;
 
-        public string LpdcSelectedItem
+        public string? LpdcSelectedItem
         {
             get { return _ldpcSelectedItem; }
             set { _ldpcSelectedItem = this.RaiseAndSetIfChanged(ref _ldpcSelectedItem, value);
                 LdpcFormatted = "ldpc=" + value;
             }
         }
-        private string _ldpcFormatted;
+        private string? _ldpcFormatted;
 
-        public string LdpcFormatted
+        public string? LdpcFormatted
         {
             get { return _ldpcFormatted; }
             set { _ldpcFormatted = this.RaiseAndSetIfChanged(ref _ldpcFormatted, value); }
         }
 
-        public List<string> LdpcList
+        public List<string?> LdpcList
         {
             get { return _ldpc; }
             set { _ldpc = this.RaiseAndSetIfChanged(ref _ldpc, value); }
         }
         #endregion
         #region FECK
-        private List<string> _fecK = new List<string>
+        private List<string?> _fecK = new List<string?>
         {
             "1",
             "2",
@@ -355,31 +355,31 @@ namespace openipc.configurator.ViewModels
             "15"
         };
 
-        private string _fecKSelectedItem;
+        private string? _fecKSelectedItem;
 
-        public string FecKSelectedItem
+        public string? FecKSelectedItem
         {
             get { return _fecKSelectedItem; }
             set { _fecKSelectedItem = this.RaiseAndSetIfChanged(ref _fecKSelectedItem, value);
                 FecKFormatted = "fec_k=" + value;
             }
         }
-        private string _fecKFormatted;
+        private string? _fecKFormatted;
 
-        public string FecKFormatted
+        public string? FecKFormatted
         {
             get { return _fecKFormatted; }
             set { _fecKFormatted = this.RaiseAndSetIfChanged(ref _fecKFormatted, value); }
         }
 
-        public List<string> FecKList
+        public List<string?> FecKList
         {
             get { return _fecK; }
             set { _fecK = this.RaiseAndSetIfChanged(ref _fecK, value); }
         }
         #endregion
         #region FECN
-        private List<string> _fecN = new List<string>
+        private List<string?> _fecN = new List<string?>
         {
             "1",
             "2",
@@ -398,25 +398,25 @@ namespace openipc.configurator.ViewModels
             "15"
         };
 
-        private string _fecNSelectedItem;
+        private string? _fecNSelectedItem;
 
-        public string FecNSelectedItem
+        public string? FecNSelectedItem
         {
             get { return _fecNSelectedItem; }
             set { _fecNSelectedItem = this.RaiseAndSetIfChanged(ref _fecNSelectedItem, value);
                 FecNFormatted = "fec_n=" + value;
             }
         }
-        private string _fecNFormatted;
+        private string? _fecNFormatted;
 
-        public string FecNFormatted
+        public string? FecNFormatted
         {
             get { return _fecNFormatted; }
             set { _fecNFormatted = this.RaiseAndSetIfChanged(ref _fecNFormatted, value); }
         }
 
 
-        public List<string> FecNList
+        public List<string?> FecNList
         {
             get { return _fecN; }
             set { _fecN = this.RaiseAndSetIfChanged(ref _fecN, value); }
@@ -443,6 +443,26 @@ namespace openipc.configurator.ViewModels
             get { return _openIpcChecked; }
             set { _openIpcChecked = this.RaiseAndSetIfChanged(ref _openIpcChecked, value); }
         }
+
+        #region BOTTOM_PANEL
+
+        private string? _ipAddress;
+
+        public string? IpAddress
+        {
+            get { return _ipAddress; }
+            set { _ipAddress = this.RaiseAndSetIfChanged(ref _ipAddress, value); }
+        }
+        private string? _password;
+
+        public string? Password
+        {
+            get { return _password; }
+            set { _password = this.RaiseAndSetIfChanged(ref _password, value); }
+        }
+
+
+        #endregion
 
         #region BUTTONS
 

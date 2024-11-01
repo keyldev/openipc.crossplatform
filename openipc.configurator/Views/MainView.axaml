@@ -364,9 +364,10 @@
 		<StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom"
 					Margin="15,0,0,0" Grid.Row="1">
 			<StackPanel Orientation="Horizontal">
-				<TextBox Watermark="IP Address" Text=""
+				<TextBox Watermark="IP Address" Text="{Binding IpAddress}"
 						 Width="160"/>
-				<TextBox Watermark="Password" Text="" PasswordChar="*"
+				<TextBox Watermark="Password"  PasswordChar="*"
+						 Text="{Binding Password}"
 						 Width="120"
 			Margin="5,0,0,0"/>
 				<Button Margin="5,0,0,0"
