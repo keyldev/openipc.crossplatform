@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openipc.configurator", "openipc.configurator\openipc.configurator.csproj", "{4122E9A3-78BF-4D61-82D2-F9F416EE9965}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openipc.configurator.Android", "openipc.configurator.Android\openipc.configurator.Android.csproj", "{F9613B65-1A86-4A31-82CB-13CAEAD77050}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openipc.configurator.Desktop", "openipc.configurator.Desktop\openipc.configurator.Desktop.csproj", "{BB375CF2-6CBA-4822-85B0-3E0A62A13285}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openipc.configurator.iOS", "openipc.configurator.iOS\openipc.configurator.iOS.csproj", "{067D6D8B-CFCF-447D-8F50-69034A789A57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openipc.configurator.Browser", "openipc.configurator.Browser\openipc.configurator.Browser.csproj", "{E1C4CA59-A188-4758-BACF-EDF1070B5B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4122E9A3-78BF-4D61-82D2-F9F416EE9965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4122E9A3-78BF-4D61-82D2-F9F416EE9965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4122E9A3-78BF-4D61-82D2-F9F416EE9965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4122E9A3-78BF-4D61-82D2-F9F416EE9965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9613B65-1A86-4A31-82CB-13CAEAD77050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9613B65-1A86-4A31-82CB-13CAEAD77050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9613B65-1A86-4A31-82CB-13CAEAD77050}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F9613B65-1A86-4A31-82CB-13CAEAD77050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9613B65-1A86-4A31-82CB-13CAEAD77050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB375CF2-6CBA-4822-85B0-3E0A62A13285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB375CF2-6CBA-4822-85B0-3E0A62A13285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB375CF2-6CBA-4822-85B0-3E0A62A13285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB375CF2-6CBA-4822-85B0-3E0A62A13285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067D6D8B-CFCF-447D-8F50-69034A789A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067D6D8B-CFCF-447D-8F50-69034A789A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067D6D8B-CFCF-447D-8F50-69034A789A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067D6D8B-CFCF-447D-8F50-69034A789A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C4CA59-A188-4758-BACF-EDF1070B5B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C4CA59-A188-4758-BACF-EDF1070B5B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C4CA59-A188-4758-BACF-EDF1070B5B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C4CA59-A188-4758-BACF-EDF1070B5B21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CB6F572-ACD8-4C43-80C2-88ACFA623BA5}
+	EndGlobalSection
+EndGlobal

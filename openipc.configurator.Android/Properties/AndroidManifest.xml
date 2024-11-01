@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.avaloniaapp">
+
+    <!-- Укажите минимальную и целевую версии API Android -->
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="33" />
+
+    <!-- Разрешения, если они необходимы для вашего приложения -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Определение главной активности -->
+    <application
+        android:allowBackup="true"
+        android:label="openipc.configurator"
+		android:icon="@drawable/Icon" 
+        >
+
+    </application>
+</manifest>

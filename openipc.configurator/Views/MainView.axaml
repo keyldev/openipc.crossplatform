@@ -1,0 +1,384 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:openipc.configurator.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="openipc.configurator.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<!--<Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+
+		--><!-- Верхняя панель с заголовком --><!--
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+			<TextBlock Text="My App"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+		</StackPanel>
+
+		--><!-- Основная область с содержимым --><!--
+		<ScrollViewer Grid.Row="1" Margin="10">
+			<Grid RowDefinitions="*,Auto,Auto,Auto" ColumnDefinitions="*,*">
+
+				--><!-- Пример блока с изображением --><!--
+				<Image Source="/Assets/sample.jpg"
+                       Grid.Row="0" Grid.ColumnSpan="2"
+                       MaxHeight="200"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+				--><!-- Первый текстовый блок с адаптивными отступами --><!--
+				<TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="Welcome to My App"
+                           FontSize="18"
+                           Margin="10,20,10,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+				--><!-- Поле ввода и кнопка --><!--
+				<TextBox Grid.Row="2" Grid.Column="0"
+                         Width="200"
+                         HorizontalAlignment="Right"
+                         Margin="10"/>
+				<Button Grid.Row="2" Grid.Column="1"
+                        Content="Войти"
+                        Width="100"
+                        Margin="10"/>
+
+				--><!-- Пример адаптивного нижнего текста --><!--
+				<TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="© 2024 My Company"
+                           FontSize="12"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Margin="10"/>
+			</Grid>
+		</ScrollViewer>
+	</Grid>-->
+	<Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+		
+			<TabControl Grid.Row="0">
+				<TabItem Header="WFB Settings">
+					<ScrollViewer>
+						<Grid>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select 5.8GHz Frequency"
+										  ItemsSource="{Binding FiveEightFrequencyList}"
+								Width="220" />
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select 5.8GHz TX Power"
+										  ItemsSource="{Binding FiveEightTxPowerList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select 2.4GHz Frequency"
+										  ItemsSource="{Binding TwoFourFrequencyList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select 2.4GHz TX Power"
+										  ItemsSource="{Binding TwoFourTxPowerList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select MCS INDEX"
+										  ItemsSource="{Binding MscIndexList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select STBC"
+										  ItemsSource="{Binding StbcList}" Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select LDPC"
+										  ItemsSource="{Binding LdpcList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select FEC K"
+										  ItemsSource="{Binding FecKList}"
+								Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,1">
+									<ComboBox PlaceholderText="Select FEC N"
+										  ItemsSource="{Binding FecNList}" Width="220"/>
+									<TextBox Text="" Width="200"
+											 Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal"
+											HorizontalAlignment="Center">
+									<Button Content="Save" Command="{Binding SaveFreq}" />
+									<Button Content="Restart WFB" Command="{Binding RestartWFB}"/>
+								</StackPanel>
+							</StackPanel>
+
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="Camera Settings">
+					<ScrollViewer>
+						<Grid>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select FPS" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Codec" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Bitrate" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Exposure" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Contrast" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Contrast" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Hue" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Saturation" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Luminance" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Flip" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Mirror" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal"
+										HorizontalAlignment="Center" VerticalAlignment="Bottom">
+								<Button
+										Content="Save"
+										Command="{Binding SaveCamera}"/>
+								<Button
+										Command="{Binding RestartMajestic}"
+										Content="Restart Majestic"/>
+							</StackPanel>
+
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="Telemetry">
+					<ScrollViewer>
+						<Grid>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Serial Port" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Baud Rate" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Router" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select MCS INDEX" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Aggregate" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select RC Channel" Width="180"/>
+									<TextBox Text="" Width="200" Margin="5,0"/>
+								</StackPanel>
+							</StackPanel>
+							<StackPanel HorizontalAlignment="Right">
+								<Button Content="Enable UART0" Width="180"/>
+								<Button Content="Disable UART0" Width="180"/>
+								<Button Content="Add MAVLINK EXTRA" Width="180"/>
+								<Button Content="Upload MSPOSD" Width="180"/>
+								<Button Content="Upload INAV Fonts" Width="180"/>
+								<StackPanel Orientation="Horizontal" >
+									<Button Content="Onboard REC"/>
+									<StackPanel>
+										<RadioButton Content="ON"/>
+										<RadioButton Content="OFF" IsChecked="True"/>
+									</StackPanel>
+								</StackPanel>
+								<Button Content="Dual OSD" Width="180"/>
+							</StackPanel>
+							<Button Content="Save" HorizontalAlignment="Center"
+									VerticalAlignment="Bottom"
+									Command="{Binding SaveTLM}"/>
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="VRX">
+					<ScrollViewer>
+						<Grid>
+							<StackPanel >
+								<ComboBox PlaceholderText="Select Resolution" Width="180"/>
+								<ComboBox PlaceholderText="Select Codec" Width="180"/>
+								<ComboBox PlaceholderText="Select OSD" Width="180"/>
+								<ComboBox PlaceholderText="Select Format" Width="180"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Center">
+								<TextBox Watermark="Custom X"/>
+								<TextBox Watermark="Custom Y" Margin="13,0"/>
+							</StackPanel>
+
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="Setup">
+					<ScrollViewer>
+						<Grid>
+							<TextBlock HorizontalAlignment="Right"
+									   VerticalAlignment="Top" Margin="0,10">
+								<Run FontSize="10">← This is for controlling resolution/bitrate with a TX Controller</Run>
+								<LineBreak />
+								<Run>1. Type the IP subnet to scan (eg. 192.168.0.)</Run>
+								<LineBreak />
+								<Run>2. Press [SCAN]</Run>
+								<LineBreak />
+								<Run>3. Wait for the [Scan completed] message to appear</Run>
+								<LineBreak />
+								<Run>Do not touch anything until finished</Run>
+							</TextBlock>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal" >
+									<Button Content="Script files Backup" Margin="4" Width="180"/>
+									<Button Content="Script files Restore" Margin="4" Width="180"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Button Content="Sensor Bin Backup" Margin="4" Width="180"/>
+									<Button Content="Sensor Driver Backup" Margin="4" Width="180"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Button Content="Sensor Bin Update" Margin="4" Width="180"/>
+									<Button Content="Sensor Driver Update" Margin="4" Width="180"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<ComboBox PlaceholderText="Select Sensor" Width="180" Margin="4"/>
+									<TextBox Watermark="sensor_imx415_mipi.ko" Width="180" Margin="4"/>
+								</StackPanel>
+							</StackPanel>
+
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="OSD">
+					<ScrollViewer>
+						<Grid>
+							<StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+								<Image
+								Width="500" Height="300" Source="/Assets/sample.jpg"/>
+								<Button HorizontalAlignment="Center" Content="Up"/>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+									<Button Content="Left"/>
+									<Button Content="Down"/>
+									<Button Content="Right"/>
+								</StackPanel>
+							</StackPanel>
+							<!--change to grid or dock-panel.-->
+							<StackPanel HorizontalAlignment="Right">
+								<CheckBox Content="ALT" MinWidth="15" MinHeight="15" IsChecked="true"/>
+								<CheckBox Content="SPD" IsChecked="true"/>
+								<CheckBox Content="VSPD" IsChecked="true"/>
+								<CheckBox Content="BAT" IsChecked="true"/>
+								<CheckBox Content="CONS" IsChecked="true"/>
+								<CheckBox Content="CUR" IsChecked="true"/>
+								<CheckBox Content="THR" IsChecked="true"/>
+								<CheckBox Content="SATS" IsChecked="true"/>
+								<CheckBox Content="HDG" IsChecked="true"/>
+								<CheckBox Content="LAT" IsChecked="true"/>
+								<CheckBox Content="LON" IsChecked="true"/>
+								<CheckBox Content="DIST" IsChecked="true"/>
+								<CheckBox Content="RSSL" IsChecked="true"/>
+								<CheckBox Content="OpenIPC" IsChecked="true"/>
+								<CheckBox Content="RX Packets" IsChecked="true"/>
+								<CheckBox Content="Bitrate" IsChecked="true"/>
+								<CheckBox Content="TIME" IsChecked="true"/>
+								<CheckBox Content="HORIZON" IsChecked="true"/>
+							</StackPanel>
+						</Grid>
+					</ScrollViewer>
+				</TabItem>
+			</TabControl>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom"
+						Margin="15,0,0,0" Grid.Row="1">
+				<StackPanel Orientation="Horizontal">
+					<TextBox Watermark="IP Address" Text=""
+							 Width="160"/>
+					<TextBox Watermark="Password" Text="" PasswordChar="*"
+							 Width="120"
+				Margin="5,0,0,0"/>
+					<Button Margin="5,0,0,0"
+							Content="Firmware Update"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal"
+						Margin="0,5,0,0" Grid.Row="3">
+					<Rectangle
+						Fill="Red" Width="30" Margin="0,0,3,0"
+							   RadiusX="3" RadiusY="3"/>
+					<Button Content="Connect"/>
+					<Button Content="Save-Reboot" IsEnabled="False"/>
+					<Button Content="Reboot" IsEnabled="False"/>
+					<Button Content="Upload"/>
+					<Button Content="Temperature"/>
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom"
+						Orientation="Vertical" Margin="0,0,15,0"
+						Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+				<RadioButton Content="OpenIPC Camera" IsChecked="{Binding OpenIPCChecked}"/>
+				<RadioButton Content="NVR Hi3536"
+							 IsChecked="{Binding Nvr}"/>
+				<RadioButton Content="Radxa Zero 3w (WFB-ng)"
+							 IsChecked="{Binding RadxaZero3W}"/>
+				<TextBlock Text="v1.7" FontSize="10" HorizontalAlignment="Right"
+		   VerticalAlignment="Bottom"/>
+			</StackPanel>
+
+	</Grid>
+</UserControl>
