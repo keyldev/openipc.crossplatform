@@ -1,6 +1,7 @@
 ﻿
 using ReactiveUI;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace openipc.configurator.ViewModels
@@ -9,14 +10,7 @@ namespace openipc.configurator.ViewModels
     {
 #pragma warning disable CA1822 // Mark members as static
 
-        private string _testText;
-
-        public string TestText
-        {
-            get { return _testText; }
-            set { _testText = this.RaiseAndSetIfChanged(ref _testText, value); }
-        }
-
+        #region FiveEightFrequency
         private List<string> _fiveEightFrequencyList = new List<string>
         {
             "5180 MHz [36]",
@@ -48,12 +42,34 @@ namespace openipc.configurator.ViewModels
             "5865 MHz [173]",
             "5885 MHz [177]"
         };
+        private string _fiveEightSelectedItem;
+
+        public string FiveEightSelectedItem
+        {
+            get { return _fiveEightSelectedItem; }
+            set
+            {
+                _fiveEightSelectedItem = this.RaiseAndSetIfChanged(ref _fiveEightSelectedItem, value);
+
+                var match = Regex.Match(FiveEightSelectedItem ?? "", @"\[(\d+)\]");
+                FiveEightChannelFormatted = "channel=" + (match.Success ? match.Groups[1].Value : FiveEightSelectedItem);
+            }
+        }
+        private string _fiveEightChannelFormatted;
+
+        public string FiveEightChannelFormatted
+        {
+            get => _fiveEightChannelFormatted;
+            set => this.RaiseAndSetIfChanged(ref _fiveEightChannelFormatted, value);
+        }
 
         public List<string> FiveEightFrequencyList
         {
             get { return _fiveEightFrequencyList; }
             set { _fiveEightFrequencyList = this.RaiseAndSetIfChanged(ref _fiveEightFrequencyList, value); }
         }
+        #endregion
+        #region FiveEightTxPower
         private List<string> _fiveEightTxPower = new List<string>
         {
             "1",
@@ -88,12 +104,31 @@ namespace openipc.configurator.ViewModels
             "63"
         };
 
+        private string _fiveEightTxPowerSelectedItem;
+
+        public string FiveEightTxPowerSelectedItem
+        {
+            get { return _fiveEightTxPowerSelectedItem; }
+            set { _fiveEightTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _fiveEightTxPowerSelectedItem, value);
+                FiveEightTxFormatted = "driver_txpower_override=" + value;
+            }
+        }
+        private string _fiveEightTxFormatted;
+
+        public string FiveEightTxFormatted
+        {
+            get { return _fiveEightTxFormatted; }
+            set { _fiveEightTxFormatted = this.RaiseAndSetIfChanged(ref _fiveEightTxFormatted, value); }
+        }
+
+
         public List<string> FiveEightTxPowerList
         {
             get { return _fiveEightTxPower; }
             set { _fiveEightTxPower = this.RaiseAndSetIfChanged(ref _fiveEightTxPower, value); }
         }
-
+        #endregion
+        #region TwoFourFrequency
         private List<string> _twoFourFrequency = new List<string>
         {
             "2412 MHz [1]",
@@ -111,12 +146,31 @@ namespace openipc.configurator.ViewModels
             "2472 MHz [13]",
             "2484 MHz [14]"
         };
+        private string _twoFourFrequencySelectedItem;
+
+        public string TwoFourFrequencySelectedItem
+        {
+            get { return _twoFourFrequencySelectedItem; }
+            set { _twoFourFrequencySelectedItem = this.RaiseAndSetIfChanged(ref _twoFourFrequencySelectedItem, value);
+                var match = Regex.Match(TwoFourFrequencySelectedItem ?? "", @"\[(\d+)\]");
+                TwoFourFrequencyFormatted = "channel=" + (match.Success ? match.Groups[1].Value : "");
+            }
+        }
+        private string _twoFourFrequencyFormatted;
+
+        public string TwoFourFrequencyFormatted
+        {
+            get { return _twoFourFrequencyFormatted; }
+            set { _twoFourFrequencyFormatted = this.RaiseAndSetIfChanged(ref _twoFourFrequencyFormatted, value); }
+        }
 
         public List<string> TwoFourFrequencyList
         {
             get { return _twoFourFrequency; }
             set { _twoFourFrequency = this.RaiseAndSetIfChanged(ref _twoFourFrequency, value); }
         }
+        #endregion
+        #region TwoFourTxPower
         private List<string> _twoFourTxPower = new List<string>
         {
             "20",
@@ -130,11 +184,30 @@ namespace openipc.configurator.ViewModels
             "58"
         };
 
+        private string _twoFourTxPowerSelectedItem;
+
+        public string TwoFourTxPowerSelectedItem
+        {
+            get { return _twoFourTxPowerSelectedItem; }
+            set { _twoFourTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _twoFourTxPowerSelectedItem, value);
+                TwoFourTxPowerFormatted = "txpower=" + value;
+            }
+        }
+        private string _twoFourTxPowerFormatted;
+
+        public string TwoFourTxPowerFormatted
+        {
+            get { return _twoFourTxPowerFormatted; }
+            set { _twoFourTxPowerFormatted = this.RaiseAndSetIfChanged(ref _twoFourTxPowerFormatted, value); }
+        }
+
+
         public List<string> TwoFourTxPowerList
         {
             get { return _twoFourTxPower; }
             set { _twoFourTxPower = this.RaiseAndSetIfChanged(ref _twoFourTxPower, value); }
         }
+        #endregion
         private List<string> _mscIndex = new List<string>
         {
             "0",
