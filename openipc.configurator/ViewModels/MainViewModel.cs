@@ -109,7 +109,9 @@ namespace openipc.configurator.ViewModels
         public string FiveEightTxPowerSelectedItem
         {
             get { return _fiveEightTxPowerSelectedItem; }
-            set { _fiveEightTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _fiveEightTxPowerSelectedItem, value);
+            set
+            {
+                _fiveEightTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _fiveEightTxPowerSelectedItem, value);
                 FiveEightTxFormatted = "driver_txpower_override=" + value;
             }
         }
@@ -151,7 +153,9 @@ namespace openipc.configurator.ViewModels
         public string TwoFourFrequencySelectedItem
         {
             get { return _twoFourFrequencySelectedItem; }
-            set { _twoFourFrequencySelectedItem = this.RaiseAndSetIfChanged(ref _twoFourFrequencySelectedItem, value);
+            set
+            {
+                _twoFourFrequencySelectedItem = this.RaiseAndSetIfChanged(ref _twoFourFrequencySelectedItem, value);
                 var match = Regex.Match(TwoFourFrequencySelectedItem ?? "", @"\[(\d+)\]");
                 TwoFourFrequencyFormatted = "channel=" + (match.Success ? match.Groups[1].Value : "");
             }
@@ -189,7 +193,9 @@ namespace openipc.configurator.ViewModels
         public string TwoFourTxPowerSelectedItem
         {
             get { return _twoFourTxPowerSelectedItem; }
-            set { _twoFourTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _twoFourTxPowerSelectedItem, value);
+            set
+            {
+                _twoFourTxPowerSelectedItem = this.RaiseAndSetIfChanged(ref _twoFourTxPowerSelectedItem, value);
                 TwoFourTxPowerFormatted = "txpower=" + value;
             }
         }
@@ -208,6 +214,7 @@ namespace openipc.configurator.ViewModels
             set { _twoFourTxPower = this.RaiseAndSetIfChanged(ref _twoFourTxPower, value); }
         }
         #endregion
+        #region MSCIndex
         private List<string> _mscIndex = new List<string>
         {
             "0",
@@ -243,34 +250,92 @@ namespace openipc.configurator.ViewModels
             "30",
             "31"
         };
+        private string _mscIndexSelectedItem;
+
+        public string MscIndexSelectedItem
+        {
+            get { return _mscIndexSelectedItem; }
+            set
+            {
+                _mscIndexSelectedItem = this.RaiseAndSetIfChanged(ref _mscIndexSelectedItem, value);
+                MscIndexFormatted = "mcs_index=" + value;
+            }
+        }
+        private string _mscIndexFormatted;
+
+        public string MscIndexFormatted
+        {
+            get { return _mscIndexFormatted; }
+            set { _mscIndexFormatted = this.RaiseAndSetIfChanged(ref _mscIndexFormatted, value); }
+        }
 
         public List<string> MscIndexList
         {
             get { return _mscIndex; }
             set { _mscIndex = this.RaiseAndSetIfChanged(ref _mscIndex, value); }
         }
+        #endregion
+        #region STBC
         private List<string> _stbc = new List<string>
         {
             "0",
             "1"
         };
+        private string _stbcSelectedItem;
+
+        public string StbcSelectedItem
+        {
+            get { return _stbcSelectedItem; }
+            set
+            {
+                _stbcSelectedItem = this.RaiseAndSetIfChanged(ref _stbcSelectedItem, value);
+                StbcFormatted = "stbc=" + value;
+            }
+        }
+        private string _stbcFormatted;
+
+        public string StbcFormatted
+        {
+            get { return _stbcFormatted; }
+            set { _stbcFormatted = this.RaiseAndSetIfChanged(ref _stbcFormatted, value); }
+        }
 
         public List<string> StbcList
         {
             get { return _stbc; }
             set { _stbc = this.RaiseAndSetIfChanged(ref _stbc, value); }
         }
+        #endregion
+        #region LDPC
         private List<string> _ldpc = new List<string>
         {
             "0",
             "1"
         };
+        private string _ldpcSelectedItem;
+
+        public string LpdcSelectedItem
+        {
+            get { return _ldpcSelectedItem; }
+            set { _ldpcSelectedItem = this.RaiseAndSetIfChanged(ref _ldpcSelectedItem, value);
+                LdpcFormatted = "ldpc=" + value;
+            }
+        }
+        private string _ldpcFormatted;
+
+        public string LdpcFormatted
+        {
+            get { return _ldpcFormatted; }
+            set { _ldpcFormatted = this.RaiseAndSetIfChanged(ref _ldpcFormatted, value); }
+        }
 
         public List<string> LdpcList
         {
             get { return _ldpc; }
             set { _ldpc = this.RaiseAndSetIfChanged(ref _ldpc, value); }
         }
+        #endregion
+        #region FECK
         private List<string> _fecK = new List<string>
         {
             "1",
@@ -290,11 +355,30 @@ namespace openipc.configurator.ViewModels
             "15"
         };
 
+        private string _fecKSelectedItem;
+
+        public string FecKSelectedItem
+        {
+            get { return _fecKSelectedItem; }
+            set { _fecKSelectedItem = this.RaiseAndSetIfChanged(ref _fecKSelectedItem, value);
+                FecKFormatted = "fec_k=" + value;
+            }
+        }
+        private string _fecKFormatted;
+
+        public string FecKFormatted
+        {
+            get { return _fecKFormatted; }
+            set { _fecKFormatted = this.RaiseAndSetIfChanged(ref _fecKFormatted, value); }
+        }
+
         public List<string> FecKList
         {
             get { return _fecK; }
             set { _fecK = this.RaiseAndSetIfChanged(ref _fecK, value); }
         }
+        #endregion
+        #region FECN
         private List<string> _fecN = new List<string>
         {
             "1",
@@ -314,12 +398,30 @@ namespace openipc.configurator.ViewModels
             "15"
         };
 
+        private string _fecNSelectedItem;
+
+        public string FecNSelectedItem
+        {
+            get { return _fecNSelectedItem; }
+            set { _fecNSelectedItem = this.RaiseAndSetIfChanged(ref _fecNSelectedItem, value);
+                FecNFormatted = "fec_n=" + value;
+            }
+        }
+        private string _fecNFormatted;
+
+        public string FecNFormatted
+        {
+            get { return _fecNFormatted; }
+            set { _fecNFormatted = this.RaiseAndSetIfChanged(ref _fecNFormatted, value); }
+        }
+
+
         public List<string> FecNList
         {
             get { return _fecN; }
             set { _fecN = this.RaiseAndSetIfChanged(ref _fecN, value); }
         }
-
+        #endregion
         private bool _radxaZero3w;
 
         public bool RadxaZero3W

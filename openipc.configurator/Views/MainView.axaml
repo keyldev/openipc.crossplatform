@@ -85,7 +85,7 @@
 										  ItemsSource="{Binding FiveEightFrequencyList}"
 							Width="220" />
 								<TextBox Text="{Binding FiveEightChannelFormatted}" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0" IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select 5.8GHz TX Power"
@@ -93,7 +93,7 @@
 									  ItemsSource="{Binding FiveEightTxPowerList}"
 							Width="220"/>
 								<TextBox Text="{Binding FiveEightTxFormatted}" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select 2.4GHz Frequency"
@@ -101,7 +101,7 @@
 									  ItemsSource="{Binding TwoFourFrequencyList}"
 							Width="220"/>
 								<TextBox Text="{Binding TwoFourFrequencyFormatted}" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select 2.4GHz TX Power"
@@ -109,40 +109,41 @@
 									  ItemsSource="{Binding TwoFourTxPowerList}"
 							Width="220"/>
 								<TextBox Text="{Binding TwoFourTxPowerFormatted}" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select MCS INDEX"
+										  SelectedItem="{Binding MscIndexSelectedItem}"
 									  ItemsSource="{Binding MscIndexList}"
 							Width="220"/>
-								<TextBox Text="" Width="200"
-										 Margin="5,0"/>
+								<TextBox Text="{Binding MscIndexFormatted}" Width="200"
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select STBC"
 									  ItemsSource="{Binding StbcList}" Width="220"/>
 								<TextBox Text="" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select LDPC"
 									  ItemsSource="{Binding LdpcList}"
 							Width="220"/>
 								<TextBox Text="" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select FEC K"
 									  ItemsSource="{Binding FecKList}"
 							Width="220"/>
 								<TextBox Text="" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="0,1">
 								<ComboBox PlaceholderText="Select FEC N"
 									  ItemsSource="{Binding FecNList}" Width="220"/>
 								<TextBox Text="" Width="200"
-										 Margin="5,0"/>
+										 Margin="5,0"  IsReadOnly="True"/>
 							</StackPanel>
 							<StackPanel Orientation="Horizontal"
 										HorizontalAlignment="Center">
